@@ -1,0 +1,32 @@
+From aa0195ad97cfdeccf2c2fc09a23460b8e138dd06 Mon Sep 17 00:00:00 2001
+From: alibei <sebastiankotzias83@gmail.com>
+Date: Wed, 23 Mar 2022 23:26:44 +0100
+Subject: [PATCH] universal7580-common: Add aidl/light to the header path
+
+Signed-off-by: alibei <sebastiankotzias83@gmail.com>
+---
+ BoardConfigCommon.mk | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/BoardConfigCommon.mk b/BoardConfigCommon.mk
+index 0b227c5..e2a911d 100644
+--- a/BoardConfigCommon.mk
++++ b/BoardConfigCommon.mk
+@@ -21,6 +21,7 @@ BUILD_BROKEN_DUP_RULES := true
+ 
+ # Include path
+ TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
++TARGET_SPECIFIC_HEADER_PATH += hardware/samsung/aidl/light/include
+ 
+ ifneq ($(TARGET_DEVICE), gvwifi)
+ TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/ril/include
+@@ -210,4 +211,4 @@ TARGET_LD_SHIM_LIBS += \
+     /system/bin/mediaserver|/system/lib/libstagefright_shim.so \
+     /system/lib/libsec-ril.so|/vendor/lib/libcutils_shim.so \
+     /system/lib/libsec-ril-dsds.so|/vendor/lib/libcutils_shim.so \
+-    /vendor/bin/gpsd|/vendor/lib/gpsd_shim.so
+\ No newline at end of file
++    /vendor/bin/gpsd|/vendor/lib/gpsd_shim.so
+-- 
+2.35.1
+
